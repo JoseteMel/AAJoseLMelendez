@@ -22,8 +22,8 @@ public class Menu {
             }
             System.out.println("~~~~~~ MENÚ PRINCIPAL ~~~~~~");
             System.out.println("[1] Crear un instrumento.");
-            System.out.println("[2] Ver un instrumento");
-            System.out.println("[3] Salir");
+            System.out.println("[2] Buscar un instrumento.");
+            System.out.println("[3] Salir.");
             System.out.print("¿Qué quieres hacer?: \n");
 
             opcion = sc.nextInt();  //Introduce por teclado la opción a elegir
@@ -38,7 +38,12 @@ public class Menu {
                 crearInstrumento();
                 break;
             case 2:
-                verInstrumento();
+                if(pianoArrayList.isEmpty() && organoArrayList.isEmpty() && sintetizadorArrayList.isEmpty()) {
+                    System.out.println("No hay registros todavía. Crea alguno...\n");
+                    crearInstrumento();
+                } else {
+                    buscarInstrumento();
+                }
                 break;
             case 3:
                 saliendo();
@@ -61,7 +66,7 @@ public class Menu {
             System.out.println("[1] Piano.");
             System.out.println("[2] Órgano.");
             System.out.println("[3] Sintetizador.");
-            System.out.println("[4] Salir.");
+            System.out.println("[4] Ir atrás.");
             System.out.print("Elige uno: ");
 
             opcion = sc.nextInt();  //Introduce por teclado la opción a elegir
@@ -82,7 +87,7 @@ public class Menu {
                 crearSintetizador();
                 break;
             case 4:
-                saliendo();
+                inicio();
                 break;
         }
     }
@@ -93,7 +98,7 @@ public class Menu {
         System.out.println("~~ CREANDO UN PIANO ~~");
         System.out.println("Rellena las siguientes características:");
         //Número de serie
-        System.out.println("Número de serie: ");
+        System.out.print("Número de serie: ");
         String numSerie = sc.nextLine();
         //Marca
         System.out.print("Marca: ");
@@ -139,6 +144,8 @@ public class Menu {
 
         pianoArrayList.add(piano);
 
+        System.out.println("\nLos datos han sido guardados correctamente.\n");
+
         fin();
     }
 
@@ -149,7 +156,7 @@ public class Menu {
 
         System.out.println("Rellena las siguientes características:");
         //Número de serie
-        System.out.println("Número de serie: ");
+        System.out.print("Número de serie: ");
         String numSerie = sc.nextLine();
         //Marca
         System.out.print("Marca: ");
@@ -203,6 +210,8 @@ public class Menu {
 
         organoArrayList.add(organo);
 
+        System.out.println("\nLos datos han sido guardados correctamente.\n");
+
         fin();
     }
 
@@ -213,7 +222,7 @@ public class Menu {
 
         System.out.println("Rellena las siguientes características:");
         //Número de serie
-        System.out.println("Número de serie: ");
+        System.out.print("Número de serie: ");
         String numSerie = sc.nextLine();
         //Marca
         System.out.print("Marca: ");
@@ -266,27 +275,178 @@ public class Menu {
 
         sintetizadorArrayList.add(sintetizador);
 
+        System.out.println("\nLos datos han sido guardados correctamente.\n");
+
         fin();
     }
 
-    public static void verInstrumento() {
-        System.out.println("Ver instrumento");
+    public static void buscarInstrumento() {
 
-// CÓDIGO EN PRUEBAS
-//        int posicion;
-//
-//        for(Piano piano : pianoArrayList) {
-//            if(piano.getMarca().equalsIgnoreCase("Nord")) {
-//                posicion = pianoArrayList.indexOf(piano);
-//                System.out.println(pianoArrayList.get(posicion));
-//            }
-//        }
+        Scanner sc = new Scanner(System.in);
+
+        int opcion;
+        boolean error = false;
+
+        do {
+            if(error) {
+                System.out.println("\nElige uno de los 3 instrumentos.\n"); //Mensaje de error si no selecciona una opción correcta
+            }
+            System.out.println("~~~~ BUSCAR INSTRUMENTO ~~~~");
+            System.out.println("[1] Piano.");
+            System.out.println("[2] Órgano.");
+            System.out.println("[3] Sintetizador.");
+            System.out.println("[4] Ir atrás.");
+            System.out.print("Elige un instrumento para buscarlo: ");
+
+            opcion = sc.nextInt();  //Introduce por teclado la opción a elegir
+
+            if(opcion < 1 || opcion > 4){
+                error = true;
+            }
+        } while (opcion < 1 || opcion > 4);
+
+        switch (opcion) {
+            case 1:
+                if(pianoArrayList.isEmpty()) {
+                    System.out.println("No hay registros de pianos. Crea alguno...\n");
+                    crearPiano();
+                } else {
+                    buscarPiano();
+                }
+                break;
+            case 2:
+                if(organoArrayList.isEmpty()) {
+                    System.out.println("No hay registros de órganos. Crea alguno...\n");
+                    crearOrgano();
+                } else {
+                    buscarOrgano();
+                }
+                break;
+            case 3:
+                if(sintetizadorArrayList.isEmpty()) {
+                    System.out.println("No hay registros de sintetizadores. Crea alguno...\n");
+                    crearSintetizador();
+                } else {
+                    buscarSintetizador();
+                }
+                break;
+            case 4:
+                inicio();
+                break;
+        }
+    }
+
+    public static void buscarPiano() {
+
+        Scanner sc = new Scanner(System.in);
+
+        int posicion;
+
+        System.out.println("Buscar piano por Número de Serie.");
+        System.out.print("Introduce el número de serie: ");
+        String numSerie = sc.nextLine();
+
+        for(Piano piano : pianoArrayList) {
+            if(piano.getNumeroSerie().equalsIgnoreCase(numSerie)) {
+                posicion = pianoArrayList.indexOf(piano);
+                System.out.println(pianoArrayList.get(posicion));
+                fin();
+            } else {
+                busquedaFail();
+            }
+        }
+    }
+
+    public static void buscarOrgano() {
+
+        Scanner sc = new Scanner(System.in);
+
+        int posicion;
+
+        System.out.println("Buscar órgano por Número de Serie.");
+        System.out.print("Introduce el número de serie: ");
+        String numSerie = sc.nextLine();
+
+        for(Organo organo : organoArrayList) {
+            if(organo.getNumeroSerie().equalsIgnoreCase(numSerie)) {
+                posicion = organoArrayList.indexOf(organo);
+                System.out.println(organoArrayList.get(posicion));
+                fin();
+            } else {
+                busquedaFail();
+            }
+        }
+    }
+
+    public static void buscarSintetizador() {
+
+        Scanner sc = new Scanner(System.in);
+
+        int posicion;
+
+        System.out.println("Buscar sintetizador por Número de Serie.");
+        System.out.print("Introduce el número de serie: ");
+        String numSerie = sc.nextLine();
+
+        for(Sintetizador sintetizador : sintetizadorArrayList) {
+            if(sintetizador.getNumeroSerie().equalsIgnoreCase(numSerie)) {
+                posicion = sintetizadorArrayList.indexOf(sintetizador);
+                System.out.println(sintetizadorArrayList.get(posicion));
+                fin();
+            } else {
+                busquedaFail();
+            }
+        }
+    }
+
+    public static void busquedaFail() {     // ************************** EDITAR ESTE METODO ****************************** //
+
+        Scanner sc = new Scanner(System.in);
+
+        String respuesta;
+
+        System.out.println("No se ha podido encontrar un piano con ese número de serie.");
+
+        do {
+            System.out.println("¿Quieres volver a intentarlo? (S/N)");
+            respuesta = sc.nextLine();
+
+            if(respuesta.equalsIgnoreCase("S")) {
+                buscarInstrumento();
+            } else if (respuesta.equalsIgnoreCase("N")) {
+                boolean error = false;
+                int opcion;
+
+                do {
+                    if(error) {
+                        System.out.println("Tienes que elegir entre una de las 2 opciones.\n");
+                    }
+                    System.out.println("~~~~~~ MENÚ PRINCIPAL ~~~~~~");
+                    System.out.println("[1] Volver al inicio.");
+                    System.out.println("[2] Salir.");
+
+                    opcion = sc.nextInt();
+
+                    if(opcion != 1 || opcion != 2){
+                        error = true;
+                    }
+                } while (opcion != 1 || opcion != 3);
+
+                switch (opcion) {
+                    case 1:
+                        inicio();
+                        break;
+                    case 2:
+                        saliendo();
+                        break;
+                }
+            }
+
+        } while(!respuesta.equalsIgnoreCase("S") && !respuesta.equalsIgnoreCase("N"));
     }
 
     public static void fin() {
         Scanner sc = new Scanner(System.in);
-
-        System.out.println("\nLos datos han sido guardados correctamente.\n");
 
         String respuesta;
 
