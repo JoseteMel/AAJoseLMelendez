@@ -74,9 +74,9 @@ public class Piano extends Teclado{
 //        System.out.println("Afinado: " + afinado);
 //        System.out.println("Número de pedales: " + numPedales);
 
-        return String.valueOf("Número de serie: " + getNumeroSerie() + ", marca: " + getMarca() + ", tipo de piano: " + getTipo() + ", precio: "
+        return String.valueOf("\nNúmero de serie: " + getNumeroSerie() + ", marca: " + getMarca() + ", tipo de piano: " + getTipo() + ", precio: "
                 + getPrecio() + ", número de teclas: " + getNumTeclas() + ", peso: " + getPeso() + ", material: " + material +
                 ", número de ruedas: " + numRuedas + ", desperfectos: " + desperfectos + ", afinado: " + afinado +
-                ", número de pedales: " + numPedales  + ".");
+                ", número de pedales: " + numPedales  + ".\n");
     }
 }

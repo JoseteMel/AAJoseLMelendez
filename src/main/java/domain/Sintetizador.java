@@ -72,9 +72,9 @@ public class Sintetizador extends Teclado{
 //        System.out.println("Tipo de pantalla: " + tipoPantalla);
 //        System.out.println("Monofónico: " + monofonico);
 
-        return String.valueOf("Número de serie: " + getNumeroSerie() + ", marca: " + getMarca() + ", tipo: " + getTipo() +
+        return String.valueOf("\nNúmero de serie: " + getNumeroSerie() + ", marca: " + getMarca() + ", tipo: " + getTipo() +
                 ", precio: " + getPrecio() + ", número de teclas: " + getNumTeclas() + ", peso: " + getPeso() + ", número de osciladores: " +
                 numOsciladores + ", número de botones: " + numBotones + ", efectos: " + efectos + ", tipo de pantalla: " +
-                tipoPantalla + ", monofónico: " + monofonico + ".");
+                tipoPantalla + ", monofónico: " + monofonico + ".\n");
     }
 }
