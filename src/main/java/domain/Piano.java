@@ -1,7 +1,5 @@
 package domain;
 
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
-
 public class Piano extends Teclado{
 
     private String material;
