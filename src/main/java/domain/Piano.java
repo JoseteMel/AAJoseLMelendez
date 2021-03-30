@@ -1,5 +1,7 @@
 package domain;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+
 public class Piano extends Teclado{
 
     private String material;
@@ -56,5 +58,24 @@ public class Piano extends Teclado{
 
     public void setNumPedales(int numPedales) {
         this.numPedales = numPedales;
+    }
+
+    @Override
+    public String toString() {
+//        System.out.println("Marca: " + getMarca());
+//        System.out.println("Tipo de piano: " + getTipo());
+//        System.out.println("Precio: " + getPrecio());
+//        System.out.println("Número de teclas: " + getNumTeclas());
+//        System.out.println("Peso: " + getPeso());
+//        System.out.println("Material: " + material);
+//        System.out.println("Número de ruedas: " + numRuedas);
+//        System.out.println("Desperfectos: " + desperfectos);
+//        System.out.println("Afinado: " + afinado);
+//        System.out.println("Número de pedales: " + numPedales);
+
+        return String.valueOf("Marca: " + getMarca() + ", " + "tipo de piano: " + getTipo() + ", " + "precio: " + getPrecio() + ", " +
+                "número de teclas: " + getNumTeclas() + ", " + "peso: " + getPeso() + ", " + "material: " + material + ", " +
+                "número de ruedas: " + numRuedas + ", " + "desperfectos: " + desperfectos + ", " + "afinado: " + afinado + ", " +
+                "número de pedales: " + numPedales  + ".");
     }
 }

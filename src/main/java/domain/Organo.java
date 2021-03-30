@@ -57,4 +57,23 @@ public class Organo extends Teclado{
     public void setReparado(boolean reparado) {
         this.reparado = reparado;
     }
+
+    @Override
+    public String toString() {
+//        System.out.println("Marca: " + getMarca());
+//        System.out.println("Tipo: " + getTipo());
+//        System.out.println("Precio: " + getPrecio());
+//        System.out.println("Número de teclas: " + getNumTeclas());
+//        System.out.println("Peso: " + getPeso());
+//        System.out.println("Lugar de instalación: " + lugarInstalacion);
+//        System.out.println("Número de filas de teclado: " + numFilasTeclas);
+//        System.out.println("Número de tubos: " + numTubos);
+//        System.out.println("¿Tiene pedalera?: " + pedalera);
+//        System.out.println("Reparado: " + reparado);
+
+        return String.valueOf("Marca: " + getMarca() + ", " + "tipo: " + getTipo() + ", " + "precio: " + getPrecio() + ", " +
+                "número de teclas: " + getNumTeclas() + ", " + "peso: " + getPeso() + ", " +  "lugar de instalación: " +
+                lugarInstalacion + ", " + "número de filas de teclado: " + numFilasTeclas + ", " + "número de tubos: " +
+                numTubos + ", " + "pedalera: " + pedalera + ", " + "reparado: " + reparado + ".");
+    }
 }

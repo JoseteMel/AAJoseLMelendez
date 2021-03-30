@@ -57,4 +57,23 @@ public class Sintetizador extends Teclado{
     public void setMonofonico(boolean monofonico) {
         this.monofonico = monofonico;
     }
+
+    @Override
+    public String toString() {
+//        System.out.println("Marca: " + getMarca());
+//        System.out.println("Tipo: " + getTipo());
+//        System.out.println("Precio: " + getPrecio());
+//        System.out.println("Número de teclas: " + getNumTeclas());
+//        System.out.println("Peso: " + getPeso());
+//        System.out.println("Número de osciladores: " + numOsciladores);
+//        System.out.println("Número de botones: " + numBotones);
+//        System.out.println("¿Tiene efectos?: " + efectos);
+//        System.out.println("Tipo de pantalla: " + tipoPantalla);
+//        System.out.println("Monofónico: " + monofonico);
+
+        return String.valueOf("Marca: " + getMarca() + ", " + "tipo: " + getTipo() + ", " + "precio: " + getPrecio() + ", " +
+                "número de teclas: " + getNumTeclas() + ", " + "peso: " + getPeso() + ", " + "número de osciladores: " +
+                numOsciladores + ", " + "número de botones: " + numBotones + ", " + "efectos: " + efectos + ", " +
+                "tipo de pantalla: " + tipoPantalla + ", " + "monofónico: " + monofonico + ".");
+    }
 }
