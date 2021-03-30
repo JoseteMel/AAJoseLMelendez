@@ -10,9 +10,9 @@ public class Piano extends Teclado{
     private boolean afinado;
     private int numPedales;
 
-    public Piano(String marca, String tipo, float precio, int numTeclas, float peso, String material, int numRuedas,
+    public Piano(String numeroSerie, String marca, String tipo, float precio, int numTeclas, float peso, String material, int numRuedas,
                  String desperfectos, boolean afinado, int numPedales) {
-        super(marca, tipo, precio, numTeclas, peso);
+        super(numeroSerie, marca, tipo, precio, numTeclas, peso);
         this.material = material;
         this.numRuedas = numRuedas;
         this.desperfectos = desperfectos;
@@ -62,6 +62,7 @@ public class Piano extends Teclado{
 
     @Override
     public String toString() {
+//        System.out.println("Número de serie: " + getNumeroSerie());
 //        System.out.println("Marca: " + getMarca());
 //        System.out.println("Tipo de piano: " + getTipo());
 //        System.out.println("Precio: " + getPrecio());
@@ -73,9 +74,9 @@ public class Piano extends Teclado{
 //        System.out.println("Afinado: " + afinado);
 //        System.out.println("Número de pedales: " + numPedales);
 
-        return String.valueOf("Marca: " + getMarca() + ", " + "tipo de piano: " + getTipo() + ", " + "precio: " + getPrecio() + ", " +
-                "número de teclas: " + getNumTeclas() + ", " + "peso: " + getPeso() + ", " + "material: " + material + ", " +
-                "número de ruedas: " + numRuedas + ", " + "desperfectos: " + desperfectos + ", " + "afinado: " + afinado + ", " +
-                "número de pedales: " + numPedales  + ".");
+        return String.valueOf("Número de serie: " + getNumeroSerie() + ", marca: " + getMarca() + ", tipo de piano: " + getTipo() + ", precio: "
+                + getPrecio() + ", número de teclas: " + getNumTeclas() + ", peso: " + getPeso() + ", material: " + material +
+                ", número de ruedas: " + numRuedas + ", desperfectos: " + desperfectos + ", afinado: " + afinado +
+                ", número de pedales: " + numPedales  + ".");
     }
 }

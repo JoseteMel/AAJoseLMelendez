@@ -2,18 +2,28 @@ package domain;
 
 public class Teclado {
 
+    private String numeroSerie;
     private String marca;
     private String tipo;
     private float precio;
     private int numTeclas;
     private float peso;
 
-    public Teclado(String marca, String tipo, float precio, int numTeclas, float peso) {
+    public Teclado(String numeroSerie, String marca, String tipo, float precio, int numTeclas, float peso) {
+        this.numeroSerie = numeroSerie;
         this.marca = marca;
         this.tipo = tipo;
         this.precio = precio;
         this.numTeclas = numTeclas;
         this.peso = peso;
+    }
+
+    public String getNumeroSerie() {
+        return numeroSerie;
+    }
+
+    public void setNumeroSerie(String numeroSerie) {
+        this.numeroSerie = numeroSerie;
     }
 
     public String getMarca() {

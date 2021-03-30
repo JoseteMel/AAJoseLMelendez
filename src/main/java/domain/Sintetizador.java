@@ -8,9 +8,9 @@ public class Sintetizador extends Teclado{
     private String tipoPantalla;
     private boolean monofonico;
 
-    public Sintetizador(String marca, String tipo, float precio, int numTeclas, float peso, int numOsciladores,
+    public Sintetizador(String numSerie, String marca, String tipo, float precio, int numTeclas, float peso, int numOsciladores,
                         int numBotones, boolean efectos, String tipoPantalla, boolean monofonico) {
-        super(marca, tipo, precio, numTeclas, peso);
+        super(numSerie, marca, tipo, precio, numTeclas, peso);
         this.numOsciladores = numOsciladores;
         this.numBotones = numBotones;
         this.efectos = efectos;
@@ -60,6 +60,7 @@ public class Sintetizador extends Teclado{
 
     @Override
     public String toString() {
+//        System.out.println("Número de serie: " + getNumeroSerie());
 //        System.out.println("Marca: " + getMarca());
 //        System.out.println("Tipo: " + getTipo());
 //        System.out.println("Precio: " + getPrecio());
@@ -71,9 +72,9 @@ public class Sintetizador extends Teclado{
 //        System.out.println("Tipo de pantalla: " + tipoPantalla);
 //        System.out.println("Monofónico: " + monofonico);
 
-        return String.valueOf("Marca: " + getMarca() + ", " + "tipo: " + getTipo() + ", " + "precio: " + getPrecio() + ", " +
-                "número de teclas: " + getNumTeclas() + ", " + "peso: " + getPeso() + ", " + "número de osciladores: " +
-                numOsciladores + ", " + "número de botones: " + numBotones + ", " + "efectos: " + efectos + ", " +
-                "tipo de pantalla: " + tipoPantalla + ", " + "monofónico: " + monofonico + ".");
+        return String.valueOf("Número de serie: " + getNumeroSerie() + ", marca: " + getMarca() + ", tipo: " + getTipo() +
+                ", precio: " + getPrecio() + ", número de teclas: " + getNumTeclas() + ", peso: " + getPeso() + ", número de osciladores: " +
+                numOsciladores + ", número de botones: " + numBotones + ", efectos: " + efectos + ", tipo de pantalla: " +
+                tipoPantalla + ", monofónico: " + monofonico + ".");
     }
 }

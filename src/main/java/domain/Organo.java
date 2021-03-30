@@ -8,9 +8,9 @@ public class Organo extends Teclado{
     private boolean pedalera;
     private boolean reparado;
 
-    public Organo(String marca, String tipo, float precio, int numTeclas, float peso, String lugarInstalacion,
+    public Organo(String numSerie, String marca, String tipo, float precio, int numTeclas, float peso, String lugarInstalacion,
                   int numFilasTeclas, int numTubos, boolean pedalera, boolean reparado) {
-        super(marca, tipo, precio, numTeclas, peso);
+        super(numSerie, marca, tipo, precio, numTeclas, peso);
         this.lugarInstalacion = lugarInstalacion;
         this.numFilasTeclas = numFilasTeclas;
         this.numTubos = numTubos;
@@ -60,6 +60,7 @@ public class Organo extends Teclado{
 
     @Override
     public String toString() {
+//        System.out.println("Número de serie: " + getNumeroSerie());
 //        System.out.println("Marca: " + getMarca());
 //        System.out.println("Tipo: " + getTipo());
 //        System.out.println("Precio: " + getPrecio());
@@ -71,9 +72,9 @@ public class Organo extends Teclado{
 //        System.out.println("¿Tiene pedalera?: " + pedalera);
 //        System.out.println("Reparado: " + reparado);
 
-        return String.valueOf("Marca: " + getMarca() + ", " + "tipo: " + getTipo() + ", " + "precio: " + getPrecio() + ", " +
-                "número de teclas: " + getNumTeclas() + ", " + "peso: " + getPeso() + ", " +  "lugar de instalación: " +
-                lugarInstalacion + ", " + "número de filas de teclado: " + numFilasTeclas + ", " + "número de tubos: " +
-                numTubos + ", " + "pedalera: " + pedalera + ", " + "reparado: " + reparado + ".");
+        return String.valueOf("Número de serie: " + getNumeroSerie() + ", marca: " + getMarca() + ", tipo: " + getTipo() +
+                ", precio: " + getPrecio() + ", número de teclas: " + getNumTeclas() + ", peso: " + getPeso() + ", lugar de instalación: " +
+                lugarInstalacion + ", número de filas de teclado: " + numFilasTeclas + ", número de tubos: " +
+                numTubos + ", pedalera: " + pedalera + ", reparado: " + reparado + ".");
     }
 }

@@ -92,6 +92,9 @@ public class Menu {
 
         System.out.println("~~ CREANDO UN PIANO ~~");
         System.out.println("Rellena las siguientes características:");
+        //Número de serie
+        System.out.println("Número de serie: ");
+        String numSerie = sc.nextLine();
         //Marca
         System.out.print("Marca: ");
         String marca = sc.nextLine();
@@ -132,7 +135,7 @@ public class Menu {
         System.out.print("¿Cuántos pedales tiene?: ");
         int numPedales = sc.nextInt();
 
-        Piano piano = new Piano(marca, tipo, precio, numTeclas, peso, material, numRuedas, desperfectos, afinado, numPedales);
+        Piano piano = new Piano(numSerie, marca, tipo, precio, numTeclas, peso, material, numRuedas, desperfectos, afinado, numPedales);
 
         pianoArrayList.add(piano);
 
@@ -145,6 +148,9 @@ public class Menu {
         System.out.println("~~ CREANDO UN ÓRGANO ~~");
 
         System.out.println("Rellena las siguientes características:");
+        //Número de serie
+        System.out.println("Número de serie: ");
+        String numSerie = sc.nextLine();
         //Marca
         System.out.print("Marca: ");
         String marca = sc.nextLine();
@@ -192,7 +198,7 @@ public class Menu {
             reparado = true;
         }
 
-        Organo organo = new Organo(marca, tipo, precio, numTeclas, peso, lugarInstalacion, numFilasTeclas, numTubos,
+        Organo organo = new Organo(numSerie, marca, tipo, precio, numTeclas, peso, lugarInstalacion, numFilasTeclas, numTubos,
                 pedalera, reparado);
 
         organoArrayList.add(organo);
@@ -206,6 +212,9 @@ public class Menu {
         System.out.println("~~ CREANDO UN SINTETIZADOR ~~");
 
         System.out.println("Rellena las siguientes características:");
+        //Número de serie
+        System.out.println("Número de serie: ");
+        String numSerie = sc.nextLine();
         //Marca
         System.out.print("Marca: ");
         String marca = sc.nextLine();
@@ -252,7 +261,7 @@ public class Menu {
             monofonico = true;
         }
 
-        Sintetizador sintetizador = new Sintetizador(marca, tipo, precio, numTeclas, peso, numOsciladores, numBotones,
+        Sintetizador sintetizador = new Sintetizador(numSerie, marca, tipo, precio, numTeclas, peso, numOsciladores, numBotones,
                 efectos, tipoPantalla, monofonico);
 
         sintetizadorArrayList.add(sintetizador);
