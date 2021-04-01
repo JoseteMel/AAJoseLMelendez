@@ -421,7 +421,6 @@ public class Menu {
                     if(error) {
                         System.out.println("Tienes que elegir entre una de las 2 opciones.\n");
                     }
-                    System.out.println("~~~~~~ MENÚ PRINCIPAL ~~~~~~");
                     System.out.println("[1] Volver al inicio.");
                     System.out.println("[2] Salir.");
 
@@ -430,7 +429,7 @@ public class Menu {
                     if(opcion != 1 || opcion != 2){
                         error = true;
                     }
-                } while (opcion != 1 || opcion != 3);
+                } while (opcion != 1 && opcion != 2);
 
                 switch (opcion) {
                     case 1:
