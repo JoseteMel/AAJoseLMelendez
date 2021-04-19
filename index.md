@@ -1,37 +1,11 @@
-## Welcome to GitHub Pages
+## Bienvenido a mi AA sobre teclados musicales
 
-You can use the [editor on GitHub](https://github.com/JoseteMel/AAJoseLMelendez/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Esta aplicación registra y almacena diferentes datos de teclados de música según su tipo. Todos estos datos son únicos aunque hay algunos que comparten en común por el hecho de ser teclados.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Funcionamiento
 
-### Markdown
+La aplicación simplemente te pedirá una serie de datos por consola y los almacenará en un ArrayList del tipo según el teclado que hayas registrado.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Acerca de
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/JoseteMel/AAJoseLMelendez/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Esta aplicación fue desarrollada por José L. Meléndes como parte de una actividad de aprendizaje de la 2ª evaluación del curso 1º de DAM, para el uso de un proyecto en Java construido con la ayuda de Git.
