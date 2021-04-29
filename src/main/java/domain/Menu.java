@@ -133,7 +133,7 @@ public class Menu {
             System.out.print("¿Está afinado? (S/N): ");
             afinadoStr = sc.nextLine();
         } while (!afinadoStr.equalsIgnoreCase("s") && !afinadoStr.equalsIgnoreCase("n"));
-        if (afinadoStr == "s") {
+        if (afinadoStr.equals("s")) {
             afinado = true;
         }
         //Número de pedales
@@ -191,7 +191,7 @@ public class Menu {
             sc.nextLine();
             pedaleraStr = sc.nextLine();
         } while (!pedaleraStr.equalsIgnoreCase("s") && !pedaleraStr.equalsIgnoreCase("n"));
-        if (pedaleraStr == "s") {
+        if (pedaleraStr.equals("s")) {
             pedalera = true;
         }
         //Está reparado
@@ -201,7 +201,7 @@ public class Menu {
             System.out.print("¿Está reparado? (S/N): ");
             reparadoStr = sc.nextLine();
         } while (!reparadoStr.equalsIgnoreCase("s") && !reparadoStr.equalsIgnoreCase("n"));
-        if (reparadoStr == "s") {
+        if (reparadoStr.equals("s")) {
             reparado = true;
         }
 
@@ -253,7 +253,7 @@ public class Menu {
             sc.nextLine();
             efectosStr = sc.nextLine();
         } while (!efectosStr.equalsIgnoreCase("s") && !efectosStr.equalsIgnoreCase("n"));
-        if (efectosStr == "s") {
+        if (efectosStr.equals("s")) {
             efectos = true;
         }
         //Tipo de pantalla
@@ -266,7 +266,7 @@ public class Menu {
             System.out.print("¿Es monofónico? (S/N): ");
             monofonicoStr = sc.nextLine();
         } while (!monofonicoStr.equalsIgnoreCase("s") && !monofonicoStr.equalsIgnoreCase("n"));
-        if (monofonicoStr == "s") {
+        if (monofonicoStr.equals("s")) {
             monofonico = true;
         }
 
